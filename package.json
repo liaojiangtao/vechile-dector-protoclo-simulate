@@ -1,0 +1,19 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "hello word",
+  "main": "app/main.js",
+  "dependencies": {
+    "electron-prebuilt": "^1.4.0"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.13",
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "start",
+    "start": "electron ."
+  },
+  "author": "pengxiang",
+  "license": "ISC"
+}
