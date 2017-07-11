@@ -5,48 +5,30 @@
     <title>Fangle Vehicle Protocol Test & V1.0.0.0 & Designed by Gentel</title>
 </head>
 
-<tr>
-<td valign="top">IP:</td><td><input type="text" name="" style="width:100px;" /></td>
-<td valign="top">Port:</td><td><input type="text" name="" style="width:40px;" /></td>
-<td> <button>Connect</button> </td>
-<td> <button>Disconnect</button> </td>
-<td> <img src="cake.png" height="15" width="15" /></td>
-<td> <img src="cake.png" height="15" width="15" /></td>
-</tr>
+<script type="text/javascript" src=type.js></script>
+<script type="text/javascript" src=udpClient.js></script>
+<script type="text/javascript" src=vehicle_protocol_api.js></script>
+<script type="text/javascript" src=vehicle_poweron_report.js></script>
+<script type="text/javascript" src=vehicle_regulary_report.js></script>
+<script type="text/javascript" src=vehicle_status_report.js></script>
+<script type="text/javascript" src=vehicle_warming_report.js></script>
 
-<table>
-<tr>
-<td valign="top"> <button>上电汇报</button> </td>
-<td><input type="text" name="" style="width:400px;"/></td>
-</tr>
-</table>
+<label style="margin:5px">Local Port:</label>
+<input type="text" name="" style="width:40px; margin-top:5px" id="localPortInput" value="6969" />
+<label style="margin:5px">Client IP:</label>
+<input type="text" name="" style="width:100px; margin-top:5px" id="clientIpInput" value="127.0.0.1" />
+<label style="margin:5px">Client Port:</label>
+<input type="text" name="" style="width:40px; margin-top:5px" id="clientPortInput" value="8080" />
+<button style="margin:5px; width:66px" onclick=udpConnect();>Connect</button>
 
-<table>
-<tr>
-<td valign="top"> <button>来车汇报</button> </td>
-<td><input type="text" name="" style="width:400px;"/></td>
-</tr>
-</table>
-     
-<table>
-<tr>
-<td valign="top"> <button>走车汇报</button> </td>
-<td><input type="text" name="" style="width:400px;"/></td>
-</tr>
-</table>
-     
-<table>
-<tr>
-<td valign="top"> <button>定时汇报</button> </td>
-<td><input type="text" name="" style="width:400px;"/></td>
-</tr>
-</table>
-     
-<table>
-<tr>
-<td valign="top"> <button>告警汇报</button> </td>
-<td><input type="text" name="" style="width:400px;"/></td>
-</tr>
-</table>
-
+<br>
+<textarea style="width: 515px; height: 150px; max-width: 515px; max-height: 150px; margin:5px" id="resultMsgLable"> </textarea>
+<br>
+<button style="margin:5px; width:120px;" onclick=showLogLableClean();>Clean</button>
+<br>
+<button style="margin:5px; width:120px;" onclick=handlePoweronMsg();>PowerOn Report</button>
+<button style="margin:5px; width:120px;" onclick=handleComeReport();>Come Report</button>
+<button style="margin:5px; width:120px;" onclick=handleLeaveReport();>Leave Report</button>
+<button style="margin:5px; width:120px;" onclick=handleRegulartReport();>Regulary Report</button>
+<button style="margin:5px; width:120px;" onclick=handleWarmingReport();>Warming Report</button>
 </html>
